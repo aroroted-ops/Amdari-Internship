@@ -18,6 +18,7 @@ obj/
 
 # Visual Studio settings
 .vs/
+.vscode
 
 # User-specific files
 *.user
