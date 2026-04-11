@@ -31,3 +31,4 @@ obj/
 *.bak
 *.log
 
+.env
