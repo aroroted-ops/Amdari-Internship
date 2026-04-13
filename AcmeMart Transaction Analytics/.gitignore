@@ -1,0 +1,35 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+.venv/
+.venv
+
+# Environment variables
+.env
+*.env
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# dbt artifacts
+target/
+dbt_modules/
+logs/
+analysis/
+tmp/
+
+# IDE/editor files
+.vscode/
+*.code-workspace
+
+# OS generated files
+.DS_Store
+Thumbs.db
