@@ -1,0 +1,13 @@
+acmemart:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: your_account.snowflakecomputing.com
+      user: your_user
+      password: your_password  # or use private_key_path for key-pair auth
+      role: your_role
+      database: your_database
+      warehouse: your_warehouse
+      schema: your_schema
+      threads: 1

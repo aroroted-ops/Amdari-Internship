@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: google_drive
+    description: Raw transaction data from Google Drive
+    tables:
+      - name: your_table_name
+        description: The raw transaction table loaded from Google Drive

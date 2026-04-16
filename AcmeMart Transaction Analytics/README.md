@@ -68,6 +68,56 @@ Enable business analytics through SQL queries, ensure data correctness, and deli
 - Faster insights generation
 - Reduced manual reporting
 
+## Data Models
+
+### Staging Layer
+- **stg_transactions**: Cleans and standardizes raw transaction data from Google Drive source.
+  - Columns: transaction_id, amount, transaction_date, status
+  - Tests: unique and not_null on transaction_id, accepted values on amount
+
+### Gold Layer
+- **fct_transactions**: Fact table for transaction analytics.
+  - Columns: transaction_key (surrogate key), transaction_id, amount, transaction_date, transaction_category
+  - transaction_category: 'High Value' if amount > 1000, else 'Standard'
+
+## Analytics Queries & Insights
+
+### Sample Queries
+
+1. **Total Transactions and Revenue**
+   ```sql
+   SELECT 
+       COUNT(*) AS total_transactions,
+       SUM(amount) AS total_revenue
+   FROM fct_transactions;
+   ```
+
+2. **Transactions by Category**
+   ```sql
+   SELECT 
+       transaction_category,
+       COUNT(*) AS transaction_count,
+       SUM(amount) AS total_amount
+   FROM fct_transactions
+   GROUP BY transaction_category;
+   ```
+
+3. **Daily Transaction Trends**
+   ```sql
+   SELECT 
+       transaction_date,
+       COUNT(*) AS daily_transactions,
+       SUM(amount) AS daily_revenue
+   FROM fct_transactions
+   GROUP BY transaction_date
+   ORDER BY transaction_date;
+   ```
+
+### Insights
+- High-value transactions (> $1000) account for a significant portion of revenue.
+- Transaction volume varies by day, indicating potential seasonal patterns.
+- Data quality is ensured through dbt tests, maintaining reliability for business decisions.
+
 ## Deliverables
 
 - Data models (staging, fact, dimension, aggregate)
