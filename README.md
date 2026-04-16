@@ -1,9 +1,13 @@
-# Amdari Internship
+# Amdari Data Engineering Internship
 
-These are the projects done during my 2-month Amdari internship, designed to help you build, manage, and optimize real-world data systems like a professional data engineer.
+## Program Overview
+Welcome to the Amdari Data Engineering Internship — a four-month, immersive, and project-driven experience designed to help you build, manage, and optimize real-world data systems like a professional data engineer.
+
+Across five to six industry-based projects, you'll gain end-to-end experience in data architecture, pipeline automation, orchestration, and cloud deployment. From FinTech and Healthcare to Retail, Energy, and Logistics, each project replicates real business problems—helping you understand how data flows, scales, and powers decision-making in the real world.
+
+This isn't just theory — it's practice at industry pace. You'll plan, build, troubleshoot, and optimize pipelines under mentorship, just as engineers do in modern data teams.
 
 ## Internship Structure
-
 **Environment:** Remote, collaborative, and mentor-guided  
 **Meetings:** Twice a week (≈2 hours or more)  
 **Mentorship & Interview Prep:** Every Thursday  
@@ -42,12 +46,11 @@ Your journey is structured to feel like working in a real engineering environmen
    Learn how to document code, track changes, and communicate technical findings effectively.
 
 ## Tools and Technologies
-
 You'll gain hands-on experience with some of the most in-demand tools in the data engineering ecosystem:
 
 - **Programming & Scripting:** Python
-- **Databases:** SQL, PostgreSQL, MySQL, MongoDB, MotherDuckDB
-- **Data Pipelines & Orchestration:** Apache Airflow, Prefect, Airbyte
+- **Databases:** SQL, PostgreSQL, MySQL, MongoDB
+- **Data Pipelines & Orchestration:** Apache Airflow, Prefect
 - **Transformation:** Pandas, PySpark
 - **Cloud Platforms:** AWS, Google Cloud, Azure
 - **Version Control:** Git, GitHub
@@ -55,7 +58,6 @@ You'll gain hands-on experience with some of the most in-demand tools in the dat
 - **Deployment:** Docker, Virtual Environments
 
 ## Project Experience
-
 Over four months, you'll complete 5–6 hands-on projects, each reflecting a real business scenario, such as:
 
 - **Retail Analytics:** Building an ETL pipeline for automated sales data integration.
@@ -66,38 +68,36 @@ Over four months, you'll complete 5–6 hands-on projects, each reflecting a rea
 
 Each project deepens your understanding of how data supports organizational intelligence and how engineers make that flow seamless, reliable, and scalable.
 
-## Current Project: Cloud-native ELT Pipeline
+## Mentorship, Meetings & Support
 
-This repository contains one of the internship projects: a cloud-native ELT pipeline using AWS S3, Airbyte, MotherDuck, Python, and Boto3.
+### Weekly Mentorship & Interview Prep (Thursdays)
+Exclusive sessions to build technical confidence, prepare for data engineering interviews, and position your Amdari experience as real, verifiable work experience.
 
-### Workflow
+### Twice-Weekly Team Meetings
+Collaborative sessions (≈1 hour each) where teams share progress, resolve blockers, and receive mentor feedback — simulating the rhythm of agile engineering teams.
 
-1. Raw CSV files are stored locally in the `dataset/` folder.
-2. `upload_s3.py` uploads those files into an S3 bucket.
-3. Airbyte is configured with an S3 source connector.
-4. Airbyte loads the data into MotherDuck.
-5. Data is queried in MotherDuck for analysis.
+### Daily Commitment
+A minimum of 1 hour per day is expected. Consistency compounds — and what starts as daily learning soon becomes professional competence.
 
-### Repository Contents
+## What You'll Walk Away With
 
-- `upload_s3.py` - Python script that uploads dataset files from `dataset/` to S3 using `boto3`.
-- `dataset/` - Raw CSV dataset files loaded into the pipeline.
-- `sql-codes.sql` - SQL queries used to explore the data in MotherDuck.
-- `ARCHITECTURE.md` - Architecture diagram and ELT flow summary.
-- Screenshots of Airbyte connections and MotherDuck queries.
+By the end of the program, you will have:
 
-### Tools Used in This Project
+- 5–6 completed, industry-based data engineering projects.
+- A personal Amdari portfolio featuring professional documentation and code.
+- Mastery of ETL pipelines, data modeling, and cloud workflows.
+- Improved team collaboration and communication skills.
+- Real-world experience you can showcase confidently in interviews.
+- An official Amdari Internship Certificate and Work Reference Letter.
 
-- **AWS S3** as the landing zone for raw dataset files.
-- **Airbyte** to connect S3 as a source and MotherDuck as a destination.
-- **MotherDuck** to store and query the ingested data.
-- **Python** for scripting the upload process.
-- **Boto3** for AWS S3 operations.
+## Mindset for Success
+Data engineering is not just about moving data — it's about bringing structure to chaos. You'll face messy datasets, unexpected errors, and shifting requirements — just like in real production systems.
 
-### Getting Started
+At Amdari, we don't chase perfection — we cultivate problem solvers.
 
-1. Ensure AWS credentials are configured locally.
-2. Update `upload_s3.py` with your S3 bucket and file name.
+So remember:  
+"Ask questions. Document your process. Celebrate small wins.  
+Every bug you fix, every query you optimize, and every pipeline you build brings you one step closer to becoming the data engineer that top companies are looking for."
 3. Run the script: `python upload_s3.py`
 4. In Airbyte, create an S3 source connector and a MotherDuck destination connector.
 5. Run the Airbyte sync to load data into MotherDuck.
