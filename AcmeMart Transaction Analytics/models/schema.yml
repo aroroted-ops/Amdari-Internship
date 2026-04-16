@@ -1,0 +1,25 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: "Cleaned transaction data from Google Drive."
+    columns:
+      - name: transaction_id
+        description: "The primary key for this table."
+        tests:
+          - unique
+          - not_null  # Data Quality Check: Ensures no empty IDs
+      - name: amount
+        tests:
+          - accepted_values:
+              values: [0, 1000000]
+              quote: false
+              # (Optional: ensures amounts are within a sane range)
+
+  - name: fct_transactions
+    description: "Final fact table for financial reporting."
+    columns:
+      - name: transaction_key
+        tests:
+          - unique
+          - not_null
