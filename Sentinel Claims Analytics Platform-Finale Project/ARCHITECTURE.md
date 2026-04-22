@@ -7,23 +7,23 @@
 │                        SENTINEL CLAIMS ANALYTICS DATA PLATFORM                              │
 └─────────────────────────────────────────────────────────────────────────────────────────────┘
 
-    ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-    │   SOURCE     │     │   STORAGE    │     │  PROCESSING  │     │   WAREHOUSE  │
-    │   LAYER      │     │   LAYER      │     │   LAYER      │     │   LAYER      │
-    └──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘
-           │                    │                    │                    │
-           ▼                    ▼                    ▼                    ▼
-    ┌──────────────┐     ┌──────────────┐     ┌──────────────┐      ┌──────────────┐
-    │   CSV Files  │────▶│   AWS S3     │────▶│   AWS Glue   │────▶│    Amazon   │
-    │   (Multiple  │     │   (Data      │     │   (PySpark   │      │   Redshift   │
-    │   Sources)   │     │   Lake)      │     │   ETL)       │      │   (DWH)      │
-    └──────────────┘     └──────────────┘     └──────────────┘      └──────────────┘
-                                                                              │
-                                                                              ▼
-                                                                   ┌──────────────┐
-                                                                   │   ANALYTICS  │
-                                                                   │    LAYER     │
-                                                                   └──────────────┘
+    ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+    │   SOURCE     │     │   STORAGE    │     │  PROCESSING  │     │   WAREHOUSE  │     │TRANSFORMATION│
+    │   LAYER      │     │   LAYER      │     │   LAYER      │     │   LAYER      │     │    LAYER     │
+    └──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘
+           │                    │                    │                    │                    │
+           ▼                    ▼                    ▼                    ▼                    ▼
+    ┌──────────────┐     ┌──────────────┐      ┌──────────────┐      ┌──────────────┐     ┌──────────────┐
+    │   CSV Files  │────▶│   AWS S3     │────▶│   AWS Glue   │────▶│    Amazon    │────▶│     dbt      │
+    │   (Multiple  │     │   (Data      │      │   (PySpark   │      │   Redshift   │     │ (Transform)  │
+    │   Sources)   │     │   Lake)      │      │     ETL)     │      │   (DWH)      │     │              │
+    └──────────────┘     └──────────────┘      └──────────────┘      └──────────────┘     └──────────────┘
+                                                                              │                    │
+                                                                              ▼                    ▼
+                                                                   ┌──────────────┐     ┌──────────────┐
+                                                                   │   ANALYTICS  │     │   ANALYTICS  │
+                                                                   │    LAYER     │     │    LAYER     │
+                                                                   └──────────────┘     └──────────────┘
                                                                          │
            ┌─────────────────────────────────────────────────────────────┘
            ▼
@@ -77,7 +77,17 @@
 | **Facts** | Fact tables | Claims, Payments, Settlements |
 | **Analytics** | Aggregated views | Business metrics and KPIs |
 
-### 5. Analytics Layer
+### 5. Transformation Layer (dbt)
+
+| Component | Description |
+|-----------|-------------|
+| **SQL Transformations** | Business logic and data transformations |
+| **Data Modeling** | Star schema with fact and dimension tables |
+| **Testing** | Built-in data quality tests and validations |
+| **Documentation** | Self-documenting models and lineage |
+| **Version Control** | Git-based version control for transformations |
+
+### 6. Analytics Layer
 
 | Component | Description |
 |-----------|-------------|
@@ -111,11 +121,12 @@
 
 ### Data Flow
 
-1. **Ingestion**: CSV files uploaded to Raw zone
+1. **Ingestion**: CSV files uploaded to Raw zone (S3)
 2. **Validation**: Schema check and basic validation in Landing zone
-3. **Transformation**: Clean, standardize, convert to Parquet in Processed zone
+3. **Transformation**: Clean, standardize, convert to Parquet in Processed zone (Glue)
 4. **Loading**: Load to Redshift staging tables
-5. **Modeling**: Create dimension and fact tables
+5. **Modeling**: Transform and model data using dbt
+6. **Analytics**: Create dimension and fact tables, generate business metrics
 
 ---
 
@@ -203,13 +214,13 @@ ADD COLUMN is_current BOOLEAN;
 │   ┌──────────┐                                                  │
 │   │Ingest S3 │──────┐                                           │
 │   └────┬─────┘      │                                           │
-│        ▼           │                                            │
-│   ┌──────────┐     │     ┌──────────┐                           │
-│   │Validate  │──────┼────▶│  Retry   │                         │
-│   │  Data    │     │     └────┬─────┘                           │
-│   └────┬─────┘     │          │                                 │
-│        ▼           │          ▼                                 │
-│   ┌──────────┐     │     ┌──────────┐                           │
+│        ▼            │                                           │
+│   ┌──────────┐      │      ┌──────────┐                         │
+│   │Validate  │──────┼────▶│  Retry   │                          │
+│   │  Data    │      │      └────┬─────┘                         │
+│   └────┬─────┘      │          │                                │
+│        ▼            │          ▼                                │
+│   ┌──────────┐      │     ┌──────────┐                          │
 │   │Transform │──────┘     │  Alert   │                          │
 │   │ (Glue)   │            └────┬─────┘                          │
 │   └────┬─────┘                  │                               │
@@ -219,12 +230,23 @@ ADD COLUMN is_current BOOLEAN;
 │   └────┬─────┘                                                  │
 │        ▼                                                        │
 │   ┌──────────┐                                                  │
-│   │  Tests   │                                                  │
-│   └────┬─────┘                                                  │
-│        ▼                                                        │
-│   ┌──────────┐                                                  │
-│   │  End     │                                                  │
-│   └──────────┘                                                  │
+│   │Transform │──────┐                                           │
+│   │  (dbt)   │      │                                           │
+│   └────┬─────┘      │                                           │
+│        ▼            │                                           │
+│   ┌──────────┐      │      ┌──────────┐                         │
+│   │  Tests   │──────┼────▶│  Alert   │                          │
+│   └────┬─────┘      │      └────┬─────┘                         │
+│        ▼            │          │                                │
+│   ┌──────────┐      │          ▼                                │
+│   │  End     │──────┘     ┌──────────┐                          │
+│   └──────────┘            │  Retry   │                          │
+│                           └────┬─────┘                          │
+│                                │                                │
+│                                ▼                                │
+│                           ┌──────────┐                          │
+│                           │  Skip    │                          │
+│                           └──────────┘                          │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
