@@ -8,16 +8,16 @@
 └─────────────────────────────────────────────────────────────────────────────────┘
 
     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
-    │   SOURCE     │     │   INGESTION  │     │   STORAGE    │     │  TRANSFORM  │
+    │   SOURCE     │     │   INGESTION  │     │   STORAGE    │     │  TRANSFORM   │
     │   SYSTEMS    │     │    LAYER     │     │    LAYER     │     │    LAYER     │
     └──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘
            │                    │                    │                    │
            ▼                    ▼                    ▼                    ▼
-    ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+    ┌──────────────┐     ┌──────────────┐      ┌──────────────┐      ┌──────────────┐
     │   Google     │────▶│   Airbyte    │────▶│   Snowflake  │────▶│     dbt      │
-    │   Drive      │     │   (Bronze)   │     │   (Warehouse)│     │   (Gold)     │
-    │   (CSV)      │     │              │     │              │     │              │
-    └──────────────┘     └──────────────┘     └──────────────┘     └──────────────┘
+    │   Drive      │     │   (Bronze)   │      │   (Warehouse)│      │   (Gold)     │
+    │   (CSV)      │     │              │      │              │      │              │
+    └──────────────┘     └──────────────┘      └──────────────┘      └──────────────┘
                                                                               │
                                                                               ▼
                                                                    ┌──────────────┐
@@ -145,7 +145,7 @@ Gold Layer → SQL Queries → Business Insights
 │ transaction_id      │ STRING      │ Original transaction identifier            │
 │ amount              │ NUMBER      │ Transaction amount                         │
 │ transaction_date    │ DATE        │ Date of transaction                        │
-│ transaction_category│ STRING      │ 'High Value' if amount > 1000, else       │
+│ transaction_category│ STRING      │ 'High Value' if amount > 1000, else        │
 │                     │             │ 'Standard'                                 │
 └─────────────────────┴─────────────┴────────────────────────────────────────────┘
 ```
