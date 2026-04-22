@@ -33,15 +33,10 @@
     │                              PROJECT EXPERIENCE                                        │
     ├───────────────────────────────────────────────────────────────────────────────────────┤
     │                                                                                       │
-    │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐             │
-    │  │   Retail     │  │   E-Commerce │  │   FinTech    │  │   Healthcare │             │
-    │  │   Analytics  │  │   Warehouse  │  │   Streaming  │  │   Data Lake  │             │
-    │  └──────────────┘  └──────────────┘  └──────────────┘  └──────────────┘             │
-    │                                                                                       │
-    │  ┌──────────────┐                                                                  │
-    │  │   Logistics  │                                                                  │
-    │  │   Reporting  │                                                                  │
-    │  └──────────────┘                                                                  │
+    │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐                               │
+    │  │   AcmeMart   │  │   Retailio   │  │   Sentinel   │                               │
+    │  │   (Retail)   │  │(E-Commerce)  │  │ (Healthcare) │                               │
+    │  └──────────────┘  └──────────────┘  └──────────────┘                               │
     │                                                                                       │
     └───────────────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -203,38 +198,24 @@
 ├─────────────────────────────────────────────────────────────────────────────────────┤
 │                                                                                     │
 │  ┌─────────────────────────────────────────────────────────────────────────────┐   │
-│  │  Project 1: Retail Analytics - ETL Pipeline                                 │   │
+│  │  Project 1: AcmeMart Transaction Analytics (Retail)                        │   │
 │  │  ─────────────────────────────────────────────────────────────────────────  │   │
-│  │  Tech: Python, Pandas, Airbyte, MotherDuck, S3                             │   │
-│  │  Goal: Automated sales data integration from multiple sources              │   │
+│  │  Tech: dbt, Snowflake, Airbyte, Python                                     │   │
+│  │  Goal: ETL pipeline for automated sales data integration                   │   │
 │  └─────────────────────────────────────────────────────────────────────────────┘   │
 │                                                                                     │
 │  ┌─────────────────────────────────────────────────────────────────────────────┐   │
-│  │  Project 2: E-Commerce - Data Warehouse                                    │   │
+│  │  Project 2: Retailio Sales Integration Pipeline (E-Commerce)              │   │
 │  │  ─────────────────────────────────────────────────────────────────────────  │   │
-│  │  Tech: dbt, Snowflake, Airbyte                                             │   │
-│  │  Goal: Multi-channel reporting with fact/dimension tables                  │   │
+│  │  Tech: AWS S3, Airbyte, MotherDuck, Python (Boto3)                        │   │
+│  │  Goal: Data warehouse for multi-channel sales reporting                    │   │
 │  └─────────────────────────────────────────────────────────────────────────────┘   │
 │                                                                                     │
 │  ┌─────────────────────────────────────────────────────────────────────────────┐   │
-│  │  Project 3: FinTech - Real-time Streaming                                  │   │
+│  │  Project 3: Sentinel Claims Analytics Platform (Healthcare)               │   │
 │  │  ─────────────────────────────────────────────────────────────────────────  │   │
-│  │  Tech: Kafka, Spark Streaming, PostgreSQL                                  │   │
-│  │  Goal: Fraud detection through transaction monitoring                      │   │
-│  └─────────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                     │
-│  ┌─────────────────────────────────────────────────────────────────────────────┐   │
-│  │  Project 4: Healthcare - Data Lake                                         │   │
-│  │  ─────────────────────────────────────────────────────────────────────────  │   │
-│  │  Tech: AWS S3, Glue, Redshift, Airflow                                     │   │
-│  │  Goal: Scalable patient analytics platform                                 │   │
-│  └─────────────────────────────────────────────────────────────────────────────┘   │
-│                                                                                     │
-│  ┌─────────────────────────────────────────────────────────────────────────────┐   │
-│  │  Project 5: Logistics - Reporting Database                                 │   │
-│  │  ─────────────────────────────────────────────────────────────────────────  │   │
-│  │  Tech: PostgreSQL, Python, Tableau                                         │   │
-│  │  Goal: Performance-optimized reporting and KPI tracking                    │   │
+│  │  Tech: AWS S3, Glue, Redshift, Airflow, Terraform                         │   │
+│  │  Goal: Scalable data lake for workers' compensation claims analytics       │   │
 │  └─────────────────────────────────────────────────────────────────────────────┘   │
 │                                                                                     │
 └─────────────────────────────────────────────────────────────────────────────────────┘
@@ -361,7 +342,7 @@
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
 │   ┌─────────────────────┐    ┌─────────────────────┐          │
-│   │   5-6 Completed     │    │   Professional      │          │
+│   │   3 Completed      │    │   Professional      │          │
 │   │   Industry Projects │    │   Portfolio         │          │
 │   └─────────────────────┘    └─────────────────────┘          │
 │                                                                 │
@@ -451,7 +432,7 @@ Amdari-Internship/
 
 The Amdari Data Engineering Internship provides a comprehensive, project-driven learning experience that prepares you for real-world data engineering roles. Through:
 
-- **Hands-on Projects** - 5-6 industry-based scenarios
+- **Hands-on Projects** - 3 industry-based scenarios
 - **Modern Tech Stack** - Cloud, orchestration, and processing tools
 - **Mentorship** - Expert guidance and interview preparation
 - **Professional Practices** - GitHub, documentation, collaboration

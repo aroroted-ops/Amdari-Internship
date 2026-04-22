@@ -3,7 +3,7 @@
 ## Program Overview
 Welcome to the Amdari Data Engineering Internship — a four-month, immersive, and project-driven experience designed to help you build, manage, and optimize real-world data systems like a professional data engineer.
 
-Across five to six industry-based projects, you'll gain end-to-end experience in data architecture, pipeline automation, orchestration, and cloud deployment. From FinTech and Healthcare to Retail, Energy, and Logistics, each project replicates real business problems—helping you understand how data flows, scales, and powers decision-making in the real world.
+Across three industry-based projects, you'll gain end-to-end experience in data architecture, pipeline automation, orchestration, and cloud deployment. From Retail and E-Commerce to Healthcare, each project replicates real business problems—helping you understand how data flows, scales, and powers decision-making in the real world.
 
 This isn't just theory — it's practice at industry pace. You'll plan, build, troubleshoot, and optimize pipelines under mentorship, just as engineers do in modern data teams.
 
@@ -58,13 +58,11 @@ You'll gain hands-on experience with some of the most in-demand tools in the dat
 - **Deployment:** Docker, Virtual Environments
 
 ## Project Experience
-Over four months, you'll complete 5–6 hands-on projects, each reflecting a real business scenario, such as:
+Over four months, you'll complete 3 hands-on projects, each reflecting a real business scenario:
 
-- **Retail Analytics:** Building an ETL pipeline for automated sales data integration.
-- **E-Commerce:** Designing a data warehouse for multi-channel reporting.
-- **FinTech:** Streaming real-time transaction data for fraud detection.
-- **Healthcare:** Architecting a scalable data lake for patient analytics.
-- **Logistics:** Developing a performance-optimized reporting database.
+- **AcmeMart Transaction Analytics (Retail):** Building an ETL pipeline for automated sales data integration using dbt, Snowflake, and Airbyte.
+- **Retailio Sales Integration Pipeline (E-Commerce):** Designing a data warehouse for multi-channel reporting with AWS S3, Airbyte, and MotherDuck.
+- **Sentinel Claims Analytics Platform (Healthcare):** Architecting a scalable data lake for claims analytics with AWS S3, Glue, Redshift, and Airflow.
 
 Each project deepens your understanding of how data supports organizational intelligence and how engineers make that flow seamless, reliable, and scalable.
 
@@ -83,7 +81,7 @@ A minimum of 1 hour per day is expected. Consistency compounds — and what star
 
 By the end of the program, you will have:
 
-- 5–6 completed, industry-based data engineering projects.
+- 3 completed, industry-based data engineering projects.
 - A personal Amdari portfolio featuring professional documentation and code.
 - Mastery of ETL pipelines, data modeling, and cloud workflows.
 - Improved team collaboration and communication skills.
