@@ -102,3 +102,5 @@ Every bug you fix, every query you optimize, and every pipeline you build brings
 4. In Airbyte, create an S3 source connector and a MotherDuck destination connector.
 5. Run the Airbyte sync to load data into MotherDuck.
 6. Use the queries in `sql-codes.sql` to analyze the data.
+
+See `ARCHITECTURE.md` for the full ELT architecture diagram.
