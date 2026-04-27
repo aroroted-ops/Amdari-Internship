@@ -5,7 +5,7 @@ from googleapiclient.http import MediaIoBaseDownload
 from google.oauth2 import service_account
 
 # --- Configuration ---
-SERVICE_ACCOUNT_FILE = 'your-service-account-file.json'  # Change this to your actual service account JSON file path
+SERVICE_ACCOUNT_FILE = 'path/to/your/credentials.json'  # Change this to your actual service account JSON file path
 # Use the ID of the FOLDER here
 FOLDER_ID = 'your-google-drive-folder-id'  # Change this to your actual Google Drive folder ID
 
