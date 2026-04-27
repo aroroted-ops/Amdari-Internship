@@ -1,0 +1,12 @@
+version: 2
+models:
+  - name: stg_google_data
+    columns:
+      - name: user_id #Enter the user id
+        tests:
+          - unique
+          - not_null
+      - name: enrollment_status
+        tests:
+          - accepted_values:
+              values: ['ACTIVE', 'INACTIVE', 'PENDING']
