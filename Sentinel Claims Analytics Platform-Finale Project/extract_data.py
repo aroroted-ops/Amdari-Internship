@@ -5,6 +5,15 @@ from googleapiclient.http import MediaIoBaseDownload
 from google.oauth2 import service_account
 
 # --- Configuration ---
+<<<<<<< HEAD
+SERVICE_ACCOUNT_FILE = 'credentials.json'
+# Use the ID of the FOLDER here
+FOLDER_ID = 'your_google_drive_folder_id'
+
+S3_BUCKET_NAME = 'your-s3-bucket-name'
+AWS_ACCESS_KEY = 'YOUR_ACCESS_KEY'
+AWS_SECRET_KEY = 'YOUR_SECRET_KEY'
+=======
 SERVICE_ACCOUNT_FILE = 'path/to/your/credentials.json'  # Change this to your actual service account JSON file path
 # Use the ID of the FOLDER here
 FOLDER_ID = 'your-google-drive-folder-id'  # Change this to your actual Google Drive folder ID
@@ -12,6 +21,7 @@ FOLDER_ID = 'your-google-drive-folder-id'  # Change this to your actual Google D
 S3_BUCKET_NAME = 'your-s3-bucket-name'  # Change this to your actual S3 bucket name
 AWS_ACCESS_KEY = 'your-aws-access-key'  # Change this to your actual AWS access key
 AWS_SECRET_KEY = 'your-aws-secret-key'  # Change this to your actual AWS secret key
+>>>>>>> main
 
 def sync_folder_to_s3():
     # 1. Auth
