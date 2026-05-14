@@ -214,3 +214,13 @@ The project will produce the following deliverables:
 - Data quality checks and validation tests
 - Architecture diagram illustrating system design
 - Operational documentation and GitHub repository
+
+---
+
+## Disclaimer
+
+This project is part of an internship program and represents an individual learning project. For the official group project and complete implementation, please refer to the main repository:
+
+**[Sentinel Claims Platform - Group Project](https://github.com/Onyijojo/sentinel-claims-platform.git)**
+
+This repository showcases project work and documentation developed during the internship, with the understanding that it is a learning exercise and may differ from the production group implementation.
