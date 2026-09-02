@@ -1,11 +1,11 @@
 # Amdari Data Engineering Internship
 
 ## Program Overview
-Welcome to the Amdari Data Engineering Internship — a four-month, immersive, and project-driven experience designed to help you build, manage, and optimize real-world data systems like a professional data engineer.
+Welcome to the Amdari Data Engineering Internship a four-month, immersive, and project-driven experience designed to help you build, manage, and optimize real-world data systems like a professional data engineer.
 
 Across three industry-based projects, you'll gain end-to-end experience in data architecture, pipeline automation, orchestration, and cloud deployment. From Retail and E-Commerce to Healthcare, each project replicates real business problems—helping you understand how data flows, scales, and powers decision-making in the real world.
 
-This isn't just theory — it's practice at industry pace. You'll plan, build, troubleshoot, and optimize pipelines under mentorship, just as engineers do in modern data teams.
+This isn't just theory it's practice at industry pace. You'll plan, build, troubleshoot, and optimize pipelines under mentorship, just as engineers do in modern data teams.
 
 ## Internship Structure
 **Environment:** Remote, collaborative, and mentor-guided  
@@ -13,7 +13,7 @@ This isn't just theory — it's practice at industry pace. You'll plan, build, t
 **Mentorship & Interview Prep:** Every Thursday  
 **Expected Time Commitment:** Minimum of 1 hour per day  
 
-Your journey is structured to feel like working in a real engineering environment — where collaboration, accountability, and delivery matter. You'll engage in agile-style planning, sprint execution, and code reviews while solving meaningful data challenges.
+Your journey is structured to feel like working in a real engineering environment where collaboration, accountability, and delivery matter. You'll engage in agile-style planning, sprint execution, and code reviews while solving meaningful data challenges.
 
 ## Core Learning Pillars
 
@@ -72,33 +72,14 @@ Each project deepens your understanding of how data supports organizational inte
 Exclusive sessions to build technical confidence, prepare for data engineering interviews, and position your Amdari experience as real, verifiable work experience.
 
 ### Twice-Weekly Team Meetings
-Collaborative sessions (≈1 hour each) where teams share progress, resolve blockers, and receive mentor feedback — simulating the rhythm of agile engineering teams.
+Collaborative sessions (≈1 hour each) where teams share progress, resolve blockers, and receive mentor feedback simulating the rhythm of agile engineering teams.
 
 ### Daily Commitment
-A minimum of 1 hour per day is expected. Consistency compounds — and what starts as daily learning soon becomes professional competence.
+A minimum of 1 hour per day is expected. Consistency compounds and what starts as daily learning soon becomes professional competence.
 
-## What You'll Walk Away With
-
-By the end of the program, you will have:
-
-- 3 completed, industry-based data engineering projects.
-- A personal Amdari portfolio featuring professional documentation and code.
-- Mastery of ETL pipelines, data modeling, and cloud workflows.
-- Improved team collaboration and communication skills.
-- Real-world experience you can showcase confidently in interviews.
-- An official Amdari Internship Certificate and Work Reference Letter.
-
-## Mindset for Success
-Data engineering is not just about moving data — it's about bringing structure to chaos. You'll face messy datasets, unexpected errors, and shifting requirements — just like in real production systems.
-
-At Amdari, we don't chase perfection — we cultivate problem solvers.
-
-So remember:  
-"Ask questions. Document your process. Celebrate small wins.  
-Every bug you fix, every query you optimize, and every pipeline you build brings you one step closer to becoming the data engineer that top companies are looking for."
-3. Run the script: `python upload_s3.py`
-4. In Airbyte, create an S3 source connector and a MotherDuck destination connector.
-5. Run the Airbyte sync to load data into MotherDuck.
-6. Use the queries in `sql-codes.sql` to analyze the data.
+1. Run the script: `python upload_s3.py`
+2. In Airbyte, create an S3 source connector and a MotherDuck destination connector.
+3. Run the Airbyte sync to load data into MotherDuck.
+4. Use the queries in `sql-codes.sql` to analyze the data.
 
 See `ARCHITECTURE.md` for the full ELT architecture diagram.
